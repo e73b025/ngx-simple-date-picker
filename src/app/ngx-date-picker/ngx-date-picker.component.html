@@ -1,0 +1,43 @@
+<!-- Section: Header Bar -->
+<section class="header">
+  <div (click)="onPreviousMonth()" title="Go to previous month">
+    <i class="arrow left"></i>
+  </div>
+  <div (click)="onChangeMonthYear()" title="Change month and year">
+    {{getDisplayDate() | date: 'MMMM y'}}
+  </div>
+  <div (click)="onNextMonth()" title="Go to next month">
+    <i class="arrow right"></i>
+  </div>
+</section>
+
+<!-- Section: Pickers -->
+<section class="picker" [ngClass]="getPickerClassValues()">
+  <!-- Mode: Year -->
+  <ng-container *ngIf="viewMode == ViewMode.YEAR">
+    <ol>
+      <li *ngFor="let year of getYears(config.minDate, config.maxDate)" (click)="onYearSelect(year)">{{year}}</li>
+    </ol>
+  </ng-container>
+
+  <!-- Mode: Month -->
+  <ng-container *ngIf="viewMode == ViewMode.MONTH">
+    <ol>
+      <li *ngFor="let month of getMonths()" (click)="onMonthSelect(month)">{{month}}</li>
+    </ol>
+  </ng-container>
+
+  <!-- Mode: Day -->
+  <ng-container *ngIf="viewMode == ViewMode.DAY">
+    <header>
+      <div *ngFor="let dayName of getDayOfTheMonthNames()">{{dayName}}</div>
+    </header>
+    <ol>
+      <ng-container *ngFor="let day of this.generateDaysOfTheMonth()">
+        <li [id]="day.key" [ngClass]="this.getDayOfMonthClassValues(day)" (click)="onSelectDay(day)">
+          <div>{{day.value}}</div>
+        </li>
+      </ng-container>
+    </ol>
+  </ng-container>
+</section>

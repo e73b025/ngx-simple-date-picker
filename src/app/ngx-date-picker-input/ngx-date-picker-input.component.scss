@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+}
+
+:host {
+  display: block;
+  width: 360px;
+}
+
+.input-wrapper {
+  --icon-size: 20px;
+  --icon-offset-left: 10px;
+  --input-background-color: white;
+  --input-text-color: inherit;
+  --input-border: #ccc 1px solid;
+
+  position: relative;
+  display: inline-block;
+  width: 100%;
+
+  &.dark-mode {
+    --input-background-color: #111;
+    --input-text-color: #efefef;
+  }
+
+  img {
+    position: absolute;
+    right: 10px;
+    top: calc(50% - (var(--icon-size) / 2));
+    width: var(--icon-size);
+    height: var(--icon-size);
+  }
+
+  input {
+    padding: 1rem;
+    width: 100%;
+    background-color: var(--input-background-color);
+    color: var(--input-text-color);
+    border: var(--input-border);
+    border-radius: 6px;
+    box-sizing: border-box;
+    user-select: none;
+    cursor: pointer;
+    padding-right: calc(var(--icon-offset-left) + var(--icon-size) + 10px);
+  }
+}

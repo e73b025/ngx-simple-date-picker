@@ -1,0 +1,190 @@
+:host {
+  // Generic styling
+  --ngx-date-picker-border-outside: #ccc 1px solid;
+  --ngx-date-picker-border-inside: #efefef 1px solid;
+  --ngx-date-picker-general-padding: 1.5rem;
+  --ngx-date-picker-background-color: white;
+  --ngx-date-picker-text-color: inherit;
+  --ngx-date-picker-arrow-color: #111;
+
+  // Colors that define highlight for the days between the start and end dates
+  --ngx-date-picker-highlight-between-color: inherit;
+  --ngx-date-picker-highlight-between-background-color: #c0e2ff;
+
+  // Colors that define the start and end date colors
+  --ngx-date-picker-highlight-color: white;
+  --ngx-date-picker-highlight-background-color: blue;
+  --ngx-date-picker-highlight-orb-size: 40px;
+
+  &.dark-mode {
+    --ngx-date-picker-background-color: #1e1e1e;
+    --ngx-date-picker-text-color: #efefef;
+    --ngx-date-picker-border-outside: #000 1px solid;
+    --ngx-date-picker-border-inside: rgba(255, 255, 255, .2) 1px solid;
+    --ngx-date-picker-highlight-between-background-color: #00208f;
+    --ngx-date-picker-arrow-color: rgba(255, 255, 255, .8);
+  }
+
+  display: block;
+  width: 360px;
+  border: var(--ngx-date-picker-border-outside);
+  border-radius: 8px;
+  background-color: var(--ngx-date-picker-background-color);
+  color: var(--ngx-date-picker-text-color);
+  font-family: Arial, serif;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, .05);
+
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  ol {
+    list-style: none;
+  }
+
+  .header {
+    border-bottom: var(--ngx-date-picker-border-inside);
+    text-align: center;
+    display: flex;
+
+    > div {
+      padding: var(--ngx-date-picker-general-padding);
+    }
+
+    > div:nth-of-type(2) {
+      flex: 1;
+      cursor: pointer;
+    }
+
+    > :where(:nth-of-type(1), :nth-of-type(3)) {
+      opacity: .3;
+    }
+
+    > :not(.disabled):hover {
+      opacity: 1;
+    }
+
+    .arrow {
+      border: solid var(--ngx-date-picker-arrow-color);
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 4px;
+
+      &.right {
+        transform: rotate(-45deg);
+      }
+
+      &.left {
+        transform: rotate(135deg);
+      }
+    }
+  }
+
+  .picker {
+    padding: var(--ngx-date-picker-general-padding);
+    max-height: 410px;
+    overflow: auto;
+
+    &.day {
+      > header {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        font-size: .8em;
+        padding: 1rem 0;
+
+        > div {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          opacity: .3;
+        }
+      }
+
+      > ol {
+        list-style: none;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-row-gap: .3rem;
+        font-size: .8em;
+        width: 100%;
+
+        li {
+          user-select: none;
+
+          > div {
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          &.previousMonth {
+            opacity: .3;
+          }
+
+          &:is(.startDate, .endDate) > div {
+            border-radius: 10000px;
+            background-color: var(--ngx-date-picker-highlight-background-color);
+            color: var(--ngx-date-picker-highlight-color);
+          }
+
+          &.disabled {
+            cursor: not-allowed;
+            opacity: .2;
+            pointer-events: none;
+          }
+        }
+      }
+
+      &.range-mode {
+        > ol {
+          li {
+            &:is(.startDate, .endDate, .betweenDate) {
+              background-color: var(--ngx-date-picker-highlight-between-background-color);
+              color: var(--ngx-date-picker-highlight-between-color);
+            }
+
+            &.startDate {
+              border-bottom-left-radius: 50%;
+              border-top-left-radius: 50%;
+            }
+
+            &.endDate {
+              border-bottom-right-radius: 50%;
+              border-top-right-radius: 50%;
+            }
+          }
+        }
+      }
+    }
+
+    &.year, &.month {
+      ol {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        li {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: var(--ngx-date-picker-general-padding);
+
+          &:hover {
+            background-color: var(--ngx-date-picker-highlight-background-color);
+            color: var(--ngx-date-picker-highlight-color);
+            border-radius: 6px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    &.month {
+      ol {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+}

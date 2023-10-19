@@ -1,0 +1,16 @@
+::ng-deep ngx-date-picker-input {
+  width: 450px;
+}
+
+::ng-deep ngx-date-picker-input input {
+  background-color: #efefef;
+}
+
+.selected-date {
+  margin-top: 2rem;
+  background-color: rgba(0, 0, 0, .2);
+  width: 300px;
+  border-radius: 6px;
+  padding: 2rem;
+  font-size: 12px;
+}
