@@ -1,7 +1,14 @@
 {
-  "name": "ngx-date-picker",
-  "version": "1.0.0",
+  "name": "ngx-easy-date-picker",
+  "version": "1.0.1",
   "author": "e73b025 <60853824+e73b025@users.noreply.github.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/e73b025/ngx-easy-date-picker.git"
+  },
+  "keywords": [
+    "angular", "ngx", "date", "picker", "chooser", "selector", "input"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
