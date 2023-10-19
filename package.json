@@ -1,6 +1,7 @@
 {
   "name": "ngx-date-picker",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "author": "e73b025 <60853824+e73b025@users.noreply.github.com>",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
