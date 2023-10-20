@@ -1,7 +1,89 @@
-<ngx-date-picker-input
-  [(date)]="dateSelection"
-  (dateChange)="onDateChanges()"></ngx-date-picker-input>
 
-<div class="selected-date">
-  {{dateSelection | json}}
-</div>
+<main>
+  <header>
+    <h1>NGX Simple Date Picker Demo</h1>
+    <p>This page contains a series of different demos and examples of the <b>ngx-simple-date-picker</b> in action.</p>
+  </header>
+
+  <section class="demo-1">
+    <h1>Range Date Input</h1>
+    <ngx-date-picker-input
+      [(date)]="dateSelection"></ngx-date-picker-input>
+    <div class="result">
+      <div *ngIf="!dateSelection">Date not yet selected.</div>
+      <div *ngIf="dateSelection">
+        {{dateSelection.startDate.toDateString()}} to {{dateSelection.endDate.toDateString()}} </div>
+    </div>
+  </section>
+
+  <section class="demo-2">
+    <h1>Single Date Input</h1>
+    <ngx-date-picker-input
+      [(date)]="dateSelection2" [config]="demo2Config"></ngx-date-picker-input>
+    <div class="result">
+      <div *ngIf="!dateSelection2">Date not yet selected.</div>
+      <div *ngIf="dateSelection2">
+        {{dateSelection2.startDate.toDateString()}} </div>
+    </div>
+  </section>
+
+  <section class="demo-3">
+    <h1>Range Date Input with Dark Mode</h1>
+    <ngx-date-picker-input
+      [(date)]="dateSelection" [config]="demo3Config"></ngx-date-picker-input>
+    <div class="result">
+      <div *ngIf="!dateSelection">Date not yet selected.</div>
+      <div *ngIf="dateSelection">
+        {{dateSelection.startDate.toDateString()}} to {{dateSelection.endDate.toDateString()}} </div>
+    </div>
+  </section>
+
+  <section class="demo-4">
+    <h1>Range Date Input with Custom Date Format</h1>
+    <ngx-date-picker-input
+      [(date)]="dateSelection" [config]="demo4Config"></ngx-date-picker-input>
+    <div class="result">
+      <div *ngIf="!dateSelection">Date not yet selected.</div>
+      <div *ngIf="dateSelection">
+        {{dateSelection.startDate.toDateString()}} to {{dateSelection.endDate.toDateString()}} </div>
+    </div>
+  </section>
+
+  <section class="demo-5">
+    <h1>Range Date Input with Binding</h1>
+    <ngx-date-picker-input
+      [(date)]="dateSelection5"></ngx-date-picker-input>
+    <div class="result">
+      <div *ngIf="!dateSelection5">Date not yet selected.</div>
+      <div *ngIf="dateSelection5">
+        {{dateSelection5.startDate.toDateString()}} to {{dateSelection5.endDate.toDateString()}} </div>
+    </div>
+  </section>
+
+  <section class="demo-6">
+    <h1>Inline Picker UI</h1>
+    <ngx-date-picker-ui
+      [(date)]="dateSelection6"></ngx-date-picker-ui>
+
+    <div class="result">
+      <div *ngIf="!dateSelection6">Date not yet selected.</div>
+      <div *ngIf="dateSelection6">
+        {{dateSelection6.startDate.toDateString()}} to {{dateSelection6.endDate.toDateString()}} </div>
+    </div>
+  </section>
+
+  <section class="demo-7">
+    <h1>Date Picker UI with Different Colors</h1>
+    <p>Please see <b>app.component.scss</b> for guide.</p>
+    <ngx-date-picker-input
+      id="demo-7"
+      [(date)]="dateSelection6"></ngx-date-picker-input>
+
+    <div class="result">
+      <div *ngIf="!dateSelection6">Date not yet selected.</div>
+      <div *ngIf="dateSelection6">
+        {{dateSelection6.startDate.toDateString()}} to {{dateSelection6.endDate.toDateString()}} </div>
+    </div>
+  </section>
+
+</main>

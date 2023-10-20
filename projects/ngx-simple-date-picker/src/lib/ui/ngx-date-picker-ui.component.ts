@@ -3,7 +3,7 @@ import { Component, EventEmitter, HostBinding, Input, OnInit, Output } from '@an
 import { getDayOfTheMonthNames, getMaxDayCount, getMonths, getYearOffset, getYears } from './helpers/date';
 
 @Component({
-  selector: 'ngx-date-picker',
+  selector: 'ngx-date-picker-ui',
   templateUrl: './ngx-date-picker-ui.component.html',
   styleUrls: ['./ngx-date-picker-ui.component.scss']
 })

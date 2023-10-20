@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output} from '@angular/core';
 import { DatePipe } from '@angular/common';
 import { getConfigDefaults, NgxDatePickerConfig, NgxDatePickerSelection } from "../ui/ngx-date-picker-ui.component";
 
@@ -19,10 +19,17 @@ export class NgxDatePickerInputComponent implements OnInit {
   @Input('config')
   config: NgxDatePickerInputConfig = getInputConfigDefaults();
 
-  // Show or hide the date picker
+  // Internal state
   inputValue: any;
   showDatePicker: boolean = false;
   darkMode: boolean = false;
+  clickedInsideHost: boolean = true;
+
+  /**
+   * Constructor.
+   * @param elementRef
+   */
+  constructor(protected elementRef: ElementRef) {}
 
   /**
    * @inheritDoc
@@ -30,6 +37,26 @@ export class NgxDatePickerInputComponent implements OnInit {
   ngOnInit(): void {
     this.darkMode = this.config.darkMode;
     this.inputValue = this.config.datePresentationValue;
+  }
+
+  /**
+   * Called when a user clicks within the host element.
+   */
+  @HostListener('click')
+  onHostClick() {
+    this.clickedInsideHost = true;
+  }
+
+  /**
+   * Called when a user clicks within the document element.
+   */
+  @HostListener('document:click')
+  onDocumentClick() {
+    if (!this.clickedInsideHost) {
+      this.showDatePicker = false;
+    }
+
+    this.clickedInsideHost = false;
   }
 
   /**

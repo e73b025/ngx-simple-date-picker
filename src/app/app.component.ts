@@ -15,11 +15,23 @@ export class AppComponent {
   title = 'ngx-date-picker Demo';
   dateSelection: NgxDatePickerSelection | undefined;
 
-  datePickerConfig: NgxDatePickerInputConfig = Object.assign(getInputConfigDefaults(), {
-    darkMode: false,
+  dateSelection2: NgxDatePickerSelection | undefined;
+
+  demo2Config: NgxDatePickerInputConfig = Object.assign(getInputConfigDefaults(), {
     rangeMode: false,
-    datePresentationFormat: 'dd/MMMM/YYYY'
   });
+
+  demo3Config: NgxDatePickerInputConfig = Object.assign(getInputConfigDefaults(), {
+    darkMode: true
+  });
+
+  demo4Config: NgxDatePickerInputConfig = Object.assign(getInputConfigDefaults(), {
+    datePresentationFormat: 'dd/MM/yyyy'
+  });
+
+  dateSelection5: NgxDatePickerSelection | undefined;
+
+  dateSelection6: NgxDatePickerSelection | undefined;
 
   onDateChanges() {
     console.log(this.dateSelection);

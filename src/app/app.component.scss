@@ -2,15 +2,37 @@
   width: 450px;
 }
 
-::ng-deep ngx-date-picker-input input {
-  background-color: #efefef;
+main {
+  max-width: 600px;
+  min-height: 100%;
+  background-color: white;
+  padding: 4rem;
+  margin: 0 auto;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, .1);
+
+  section {
+    margin-top: 4rem;
+
+    h1 {
+      padding-bottom: 1rem;
+      border-bottom: #ccc 1px solid;
+    }
+
+    .result {
+      background-color: #003dc9;
+      color: white;
+      padding: 1rem;
+      border-radius: 6px;
+      margin-top: 1rem;
+    }
+  }
 }
 
-.selected-date {
-  margin-top: 2rem;
-  background-color: rgba(0, 0, 0, .2);
-  width: 300px;
-  border-radius: 6px;
-  padding: 2rem;
-  font-size: 12px;
+::ng-deep ngx-date-picker-input#demo-7 ngx-date-picker-ui {
+  --ngx-date-picker-highlight-background-color: red !important;
 }
+
+::ng-deep ngx-date-picker-input#demo-7 ngx-date-picker-ui {
+  --ngx-date-picker-highlight-between-background-color: #ffb2b2 !important;
+}
+
