@@ -15,11 +15,7 @@ to select a date or a date range using a clean, sharp looking popup user interfa
 
 ## Demo
 
-To view the demo, please clone the repo and run the following commands:
-
-```shell
-npm install && ng serve
-```
+[Click here to view available demos](https://e73b025.github.io/ngx-simple-date-picker/)
 
 ## Using the Input Component (easiest)
 
