@@ -40,8 +40,8 @@ jobs:
           node-version: 18.x
           cache: 'npm'
       - run: npm ci
-      - run: npm run build
-      - run: npm publish
-        working-directory: ./dist/ngx-simple-date-picker-example
+      - run: npm run build && ls
+      - run: ls && npm publish
+        working-directory: ./dist/ngx-simple-date-picker
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
