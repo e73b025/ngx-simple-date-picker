@@ -40,7 +40,7 @@ jobs:
           node-version: 18.x
           cache: 'npm'
       - run: npm ci
-      - run: npm run build
+      - run: npm run buildlib
       - run: ls
       - run: pwd
       - run: ls dist
