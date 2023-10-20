@@ -8,7 +8,7 @@ on:
 
 jobs:
   # Job to build and deploy the demo to Pages
-  build-demo:
+  demo:
     runs-on: ubuntu-latest
 
     steps:
@@ -29,7 +29,7 @@ jobs:
         publish_dir: ./dist/ngx-simple-date-picker-example
 
   # Job to build and deploy the library to NPM
-  build-library:
+  library:
     runs-on: ubuntu-latest
 
     steps:
