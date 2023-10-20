@@ -39,11 +39,12 @@ jobs:
         with:
           node-version: 18.x
           cache: 'npm'
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+          registry-url: 'https://registry.npmjs.org'
       - run: npm ci
       - run: npm run buildlib
-      - run: ls
-      - run: pwd
-      - run: ls dist
       - run: npm publish
         working-directory: ./dist/ngx-simple-date-picker
         env:
