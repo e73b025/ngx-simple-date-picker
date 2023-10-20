@@ -1,6 +1,6 @@
 <!-- Input for date picker -->
 <div class="input-wrapper" [ngClass]="{'dark-mode': darkMode}">
-  <img src="assets/calendar-icon.svg" alt="Calendar Icon" />
+  <img [src]="getCalendarIcon()" alt="Calendar Icon" />
   <input type="text"
          placeholder="Click to select date"
          readonly
