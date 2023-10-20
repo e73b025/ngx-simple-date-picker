@@ -3,15 +3,15 @@
 A simple-to-use date picker component for use in Angular (ngx) projects. This component provides your users the ability
 to select a date or a date range using a clean, sharp looking popup user interface.
 
-![Screen](./src/assets/screenshot.png)
+![Screenshot](./src/assets/screenshot.png)
 
 ## Features
 
-- Not external libraries
-- Wide Angular version support
-- Modular (separate input component and picker components)
-- Ability to select single date or date range
-- Easy to style
+- No external dependencies
+- Provides either the ability to use the picker UI directly or via a date picker input field
+- Built in light/dark mode
+- Easy to override configuration
+- Easy to override styling
 
 ## Demo
 

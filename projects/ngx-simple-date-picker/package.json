@@ -1,0 +1,17 @@
+{
+  "name": "ngx-simple-date-picker",
+  "version": "1.0.0",
+  "author": "e73b025 <60853824+e73b025@users.noreply.github.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/e73b025/ngx-simple-date-picker"
+  },
+  "peerDependencies": {
+    "@angular/common": "^16.2.0",
+    "@angular/core": "^16.2.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}

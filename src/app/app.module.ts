@@ -3,8 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {NgxDatePickerModule} from "./ngx-date-picker/ngx-date-picker.module";
-import {NgxDatePickerInputModule} from "./ngx-date-picker-input/ngx-date-picker-input.module";
+import {
+  NgxDatePickerInputModule
+} from '../../projects/ngx-simple-date-picker/src/lib/input/ngx-date-picker-input.module';
+import { NgxDatePickerUiModule } from '../../projects/ngx-simple-date-picker/src/lib/ui/ngx-date-picker-ui.module';
+
 
 @NgModule({
   declarations: [
@@ -13,7 +16,7 @@ import {NgxDatePickerInputModule} from "./ngx-date-picker-input/ngx-date-picker-
     imports: [
         BrowserModule,
         AppRoutingModule,
-        NgxDatePickerModule,
+        NgxDatePickerUiModule,
         NgxDatePickerInputModule
     ],
   providers: [],

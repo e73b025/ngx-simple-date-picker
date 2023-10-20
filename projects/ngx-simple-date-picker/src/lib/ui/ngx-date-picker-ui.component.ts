@@ -1,12 +1,13 @@
-import {Component, EventEmitter, HostBinding, Input, OnInit, Output} from '@angular/core';
-import {getDayOfTheMonthNames, getMaxDayCount, getMonths, getYearOffset, getYears} from "./helpers/date";
+import { Component, EventEmitter, HostBinding, Input, OnInit, Output } from '@angular/core';
+
+import { getDayOfTheMonthNames, getMaxDayCount, getMonths, getYearOffset, getYears } from './helpers/date';
 
 @Component({
   selector: 'ngx-date-picker',
-  templateUrl: './ngx-date-picker.component.html',
-  styleUrls: ['./ngx-date-picker.component.scss']
+  templateUrl: './ngx-date-picker-ui.component.html',
+  styleUrls: ['./ngx-date-picker-ui.component.scss']
 })
-export class NgxDatePickerComponent implements OnInit {
+export class NgxDatePickerUiComponent implements OnInit {
   // Make some helper functions accessible
   protected readonly getYears = getYears;
   protected readonly ViewMode = ViewMode;
@@ -14,11 +15,11 @@ export class NgxDatePickerComponent implements OnInit {
   protected readonly getMonths = getMonths;
 
   @Input('date')
-  date: DateSelection | undefined;
+  date: NgxDatePickerSelection | undefined;
 
   // Allow user to subscribe to date changes using output
   @Output('dateChange')
-  dateEmitter: EventEmitter<DateSelection> = new EventEmitter<DateSelection>();
+  dateEmitter: EventEmitter<NgxDatePickerSelection> = new EventEmitter<NgxDatePickerSelection>();
 
   // Allow user to provide config via input
   @Input('config')
@@ -32,7 +33,7 @@ export class NgxDatePickerComponent implements OnInit {
   readonly displayDate: Date = new Date();
 
   // Represents the current date selection
-  dateSelection: DateSelection = {
+  dateSelection: NgxDatePickerSelection = {
     startDate: new Date(),
     endDate: new Date(),
     completed: false
@@ -277,7 +278,7 @@ interface CalendarDayItem {
  *
  * @publicApi
  */
-export interface DateSelection {
+export interface NgxDatePickerSelection {
   startDate: Date;
   endDate: Date;
   completed: boolean;

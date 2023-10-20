@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import {DateSelection} from "./ngx-date-picker/ngx-date-picker.component";
+
+import { NgxDatePickerSelection } from '../../projects/ngx-simple-date-picker/src/lib/ui/ngx-date-picker-ui.component';
 import {
   getInputConfigDefaults,
   NgxDatePickerInputConfig
-} from "./ngx-date-picker-input/ngx-date-picker-input.component";
+} from '../../projects/ngx-simple-date-picker/src/lib/input/ngx-date-picker-input.component';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,7 @@ import {
 })
 export class AppComponent {
   title = 'ngx-date-picker Demo';
-  dateSelection: DateSelection | undefined;
+  dateSelection: NgxDatePickerSelection | undefined;
 
   datePickerConfig: NgxDatePickerInputConfig = Object.assign(getInputConfigDefaults(), {
     darkMode: false,

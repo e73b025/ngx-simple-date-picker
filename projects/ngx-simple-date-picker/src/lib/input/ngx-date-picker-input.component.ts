@@ -1,6 +1,6 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {DateSelection, getConfigDefaults, NgxDatePickerConfig} from "../ngx-date-picker/ngx-date-picker.component";
-import {DatePipe} from "@angular/common";
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { DatePipe } from '@angular/common';
+import { getConfigDefaults, NgxDatePickerConfig, NgxDatePickerSelection } from "../ui/ngx-date-picker-ui.component";
 
 @Component({
   selector: 'ngx-date-picker-input',
@@ -9,11 +9,11 @@ import {DatePipe} from "@angular/common";
 })
 export class NgxDatePickerInputComponent implements OnInit {
   @Input('date')
-  date: DateSelection | undefined;
+  date: NgxDatePickerSelection | undefined;
 
   // Allow user to subscribe to date changes using output
   @Output('dateChange')
-  dateEmitter: EventEmitter<DateSelection> = new EventEmitter<DateSelection>();
+  dateEmitter: EventEmitter<NgxDatePickerSelection> = new EventEmitter<NgxDatePickerSelection>();
 
   // Allow user to provide config via input
   @Input('config')
@@ -83,7 +83,7 @@ export interface NgxDatePickerInputConfig extends NgxDatePickerConfig {
  */
 export const getInputConfigDefaults = (): NgxDatePickerInputConfig => {
   return Object.assign(getConfigDefaults(), {
-    datePresentationFormat: 'dd-MMM-YYYY',
+    datePresentationFormat: 'MMM d, y',
     datePresentationLocale: 'en-US',
     datePresentationValue: 'Click Here to Choose Date'
   });

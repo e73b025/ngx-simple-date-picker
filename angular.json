@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-date-picker": {
+    "ngx-simple-date-picker-example": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ngx-date-picker",
+            "outputPath": "dist/ngx-simple-date-picker-example",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ngx-date-picker:build:production"
+              "browserTarget": "ngx-simple-date-picker-example:build:production"
             },
             "development": {
-              "browserTarget": "ngx-date-picker:build:development"
+              "browserTarget": "ngx-simple-date-picker-example:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngx-date-picker:build"
+            "browserTarget": "ngx-simple-date-picker-example:build"
           }
         },
         "test": {
@@ -96,6 +96,39 @@
               "src/styles.scss"
             ],
             "scripts": []
+          }
+        }
+      }
+    },
+    "ngx-simple-date-picker": {
+      "projectType": "library",
+      "root": "projects/ngx-simple-date-picker",
+      "sourceRoot": "projects/ngx-simple-date-picker/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-simple-date-picker/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-simple-date-picker/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-simple-date-picker/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/ngx-simple-date-picker/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
           }
         }
       }

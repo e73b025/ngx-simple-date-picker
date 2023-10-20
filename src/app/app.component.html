@@ -1,3 +1,7 @@
-<ngx-date-picker-input [(date)]="dateSelection"
-                       (dateChange)="onDateChanges()"
-                       [config]="datePickerConfig"></ngx-date-picker-input>
+<ngx-date-picker-input
+  [(date)]="dateSelection"
+  (dateChange)="onDateChanges()"></ngx-date-picker-input>
+
+<div class="selected-date">
+  {{dateSelection | json}}
+</div>

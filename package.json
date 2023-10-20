@@ -1,14 +1,6 @@
 {
-  "name": "ngx-easy-date-picker",
-  "version": "1.0.1",
-  "author": "e73b025 <60853824+e73b025@users.noreply.github.com>",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/e73b025/ngx-easy-date-picker.git"
-  },
-  "keywords": [
-    "angular", "ngx", "date", "picker", "chooser", "selector", "input"
-  ],
+  "name": "ngx-simple-date-picker",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -16,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
-  "private": false,
+  "private": true,
   "dependencies": {
     "@angular/animations": "^16.2.0",
     "@angular/common": "^16.2.0",
@@ -41,6 +33,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "ng-packagr": "^16.2.0",
     "typescript": "~5.1.3"
   }
 }
