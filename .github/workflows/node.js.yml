@@ -42,6 +42,7 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: ls
+      - run: pwd
       - run: ls dist
       - run: npm publish
         working-directory: ./dist/ngx-simple-date-picker
